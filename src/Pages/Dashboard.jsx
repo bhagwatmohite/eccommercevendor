@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   const fetchTotalUsers = async () => {
     try {
-      const response = await axios.get('http://13.201.255.228:8080/allcustomer');
+      const response = await axios.get('http://localhost:8080/allcustomer');
       const customers = response.data;
       setTotalUsers(customers.length);
     } catch (error) {
@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   const fetchVendorProducts = async (vendorId) => {
     try {
-      const response = await axios.get(`http://13.201.255.228:8080/customer/${vendorId}`);
+      const response = await axios.get(`http://localhost:8080/customer/${vendorId}`);
       const products = response.data.products; // Assuming products are in the 'products' field
       setTotalProducts(products.length);
 
@@ -45,7 +45,7 @@ const Dashboard = () => {
         return;
       }
 
-      const response = await axios.get('http://13.201.255.228:8080/allcustomer');
+      const response = await axios.get('http://localhost:8080/allcustomer');
       const customers = response.data;
       const vendor = customers.find(customer => customer.email === email);
 

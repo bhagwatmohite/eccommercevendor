@@ -14,7 +14,7 @@ const Stocks = () => {
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const response = await axios.get('http://13.201.255.228:8080/allproduct');
+        const response = await axios.get('http://localhost:8080/allproduct');
         setProductData(response.data);
 
         const uniqueCategories = [...new Set(response.data.map(product => product.category))];

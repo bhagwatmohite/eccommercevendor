@@ -14,6 +14,7 @@ import PrivateRoutes from "./Pages/PrivateRoutes";
 import Products from './Pages/Products';
 import Reports from './Pages/Reports';
 import Stocks from './Pages/Stocks';
+import ViewDetails from './Pages/ViewDeails';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -52,6 +53,7 @@ function App() {
           <Route path="/reports" element={<PrivateRoutes isLoggedIn={isLoggedIn}><Reports /></PrivateRoutes>} />
           <Route path="/stocks" element={<PrivateRoutes isLoggedIn={isLoggedIn}><Stocks /></PrivateRoutes>} />
           <Route path="/payments" element={<PrivateRoutes isLoggedIn={isLoggedIn}><Payments /></PrivateRoutes>} />
+          <Route path="/product/:id" element={<PrivateRoutes isLoggedIn={isLoggedIn}><ViewDetails /></PrivateRoutes>} />
         </Route>
       </Routes>
     </Router>

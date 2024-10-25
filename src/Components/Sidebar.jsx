@@ -158,7 +158,10 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
     <div className="container" style={{ overflow: 'hidden !important' }}>
       <div style={{ width: sidebarOpen ? "200px" : "50px" }} className="sidebar">
         <div className="top_section">
-          <h1 style={{ display: sidebarOpen ? "block" : "none" }} className="logo">{name}</h1>
+          <h1 style={{
+            display: sidebarOpen ? 'block' : 'none',
+            width: 'clamp(100px, 20%, 100px)', // Ensure `clamp` is in a string
+          }} className="logo">{name}</h1>
           <div style={{ marginLeft: sidebarOpen ? "50px" : "0px" }} className="bars">
             <FaBars onClick={toggle} />
           </div>

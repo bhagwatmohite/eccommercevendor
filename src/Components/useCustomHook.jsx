@@ -16,7 +16,7 @@ const useCustomHook = () => {
     // Fetch all user data from the API
     const fetchVendorData = async () => {
       try {
-        const response = await fetch('http://13.201.255.228:8080/allcustomer');
+        const response = await fetch('http://localhost:8080/allcustomer');
         const data = await response.json();
 
         // Find the user whose email matches the stored email

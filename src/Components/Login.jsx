@@ -17,7 +17,7 @@ const Login = ({ onLogin }) => {
     formData.append('email', email);
     formData.append('password', password);
     try {
-      const response = await axios.post('http://13.201.255.228:8080/customerlogin', formData);
+      const response = await axios.post('http://localhost:8080/customerlogin', formData);
 
       if (response.status === 200) {
         onLogin();

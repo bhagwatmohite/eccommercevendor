@@ -4,6 +4,7 @@ import { Button, Card, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 function ForgotPassword() {
+  
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [otp, setOtp] = useState('');
@@ -33,7 +34,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        'http://13.201.255.228:8080/forgotpassword',
+        'http://localhost:8080/forgotpassword',
         { email }
       );
 
@@ -58,7 +59,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        'http://13.201.255.228:8080/verifyotp',
+        'http://localhost:8080/verifyotp',
         { otp }
       );
 
@@ -81,7 +82,7 @@ function ForgotPassword() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://13.201.255.228:8080/forgotpassword', { email });
+      const response = await axios.post('http://localhost:8080/forgotpassword', { email });
 
       if (response.status === 200) {
         alert(`OTP resent to ${email}`);
@@ -106,7 +107,7 @@ function ForgotPassword() {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://13.201.255.228:8080/changepassword', { email, newPassword });
+      const response = await axios.post('http://localhost:8080/changepassword', { email, newPassword });
 
       if (response.status === 200) {
         alert('Password has been reset successfully.');

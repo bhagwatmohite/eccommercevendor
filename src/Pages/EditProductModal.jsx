@@ -349,7 +349,7 @@ const EditProductModal = ({ showModal, handleCloseModal, handleUpdateProduct, pr
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://13.201.255.228:8080/getallcategory');
+        const response = await axios.get('http://localhost:8080/getallcategory');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -389,7 +389,7 @@ const EditProductModal = ({ showModal, handleCloseModal, handleUpdateProduct, pr
         formDataToSend.append('imageFile', formData.imageFile);
       }
 
-      const response = await axios.put(`http://13.201.255.228:8080/product/${formData.id}`, formDataToSend, {
+      const response = await axios.put(`http://localhost:8080/product/${formData.id}`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

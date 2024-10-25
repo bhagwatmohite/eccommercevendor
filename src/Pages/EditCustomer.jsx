@@ -20,7 +20,7 @@ const EditCustomer = ({ customer, show, handleClose, handleUpdate }) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.put(`http://13.201.255.228:8080/updatecustomer/${formData.id}`, formData);
+      const response = await axios.put(`http://localhost:8080/updatecustomer/${formData.id}`, formData);
       if (response.status === 200) {
         handleUpdate(formData); // Update parent component state with updated customer data
         handleClose(); // Close the modal

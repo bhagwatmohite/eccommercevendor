@@ -34,7 +34,7 @@ const AddCustomer = ({ show, handleClose, handleAddCustomer }) => {
     e.preventDefault();
     try {
 
-      const response = await axios.post('http://13.201.255.228:8080/addcustomer', formData);
+      const response = await axios.post('http://localhost:8080/addcustomer', formData);
       if (response.status === 201) {
         handleAddCustomer(response.data); // Update parent component state with added customer data
         handleClose(); // Close the modal

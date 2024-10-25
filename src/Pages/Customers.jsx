@@ -15,7 +15,7 @@ const Customers = () => {
   // Fetch all customer data
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://13.201.255.228:8080/allcustomer');
+      const response = await axios.get('http://localhost:8080/allcustomer');
       setCustomerData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -29,7 +29,7 @@ const Customers = () => {
   // Function to handle delete customer
   const handleDeleteCustomer = async (customerId) => {
     try {
-      await axios.delete(`http://13.201.255.228:8080/deletecustomer/${customerId}`);
+      await axios.delete(`http://localhost:8080/deletecustomer/${customerId}`);
       alert(`Customer with ID ${customerId} deleted successfully.`);
       fetchData();
     } catch (error) {
